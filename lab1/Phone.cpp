@@ -8,3 +8,4 @@ Phone::Phone (int id, std::string familyName, std::string name, std::string fath
 	: m_id (id), m_familyName (familyName), m_name (name), m_fathersName (fatherName), m_customerNumber (customerNumber), m_TimeOfCityCalls{ secondsOfCitiesCalls,minutesOfCitiesCalls }, m_TimeofOutCityCalls{secondsOfOutCitiesCalls, minutesOfOutCitiesCalls}
 { }
 
+
