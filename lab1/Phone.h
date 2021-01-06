@@ -24,4 +24,3 @@ public:
 	friend std::ostream& operator<<(std::ostream &out, Phone &phone);
 	~Phone (){}
 };
-
