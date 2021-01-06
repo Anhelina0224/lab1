@@ -20,6 +20,8 @@ private:
 public:
 	Phone ();
 	Phone (int id, std::string familyName, std::string name, std::string fatherName, long int customerNumber, short int minutesOfCitiesCalls, short int secondsOfCitiesCalls, short int minutesOfOutCitiesCalls, short int secondsOfOutCitiesCalls);
+	friend std::istream& operator>>(std::istream& in, Phone &phone);
+	friend std::ostream& operator<<(std::ostream &out, Phone &phone);
 	~Phone (){}
 };
 

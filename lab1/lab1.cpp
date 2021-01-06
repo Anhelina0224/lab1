@@ -3,4 +3,6 @@
 int main()
 {
 	Phone phone;
+	std::cin >> phone;
+	std::cout << phone;
 }
