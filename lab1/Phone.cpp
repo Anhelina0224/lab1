@@ -37,6 +37,29 @@ std::ostream &operator<<(std::ostream &out, Phone &phone)
 	std::cout << phone.m_familyName << " " << phone.m_name << " " << phone.m_fathersName << std::endl;
 	std::cout << "Customer number: " << phone.m_customerNumber << std::endl;
 	std::cout << "Time of city calls: " << phone.m_TimeOfCityCalls.minute << ":" << phone.m_TimeOfCityCalls.second << std::endl;
-	std::cout << "Time of out city calls " << phone.m_TimeofOutCityCalls.minute << ":" << phone.m_TimeofOutCityCalls.second;
+	std::cout << "Time of out city calls " << phone.m_TimeofOutCityCalls.minute << ":" << phone.m_TimeofOutCityCalls.second << std::endl;
 	return out;
+}
+
+bool operator==(const Phone &pers1, const Phone &pers2)
+{
+	if( pers1.m_id != pers2.m_id )
+		return false;
+	else if( pers1.m_familyName != pers2.m_familyName )
+		return false;
+	else if( pers1.m_name != pers2.m_fathersName )
+		return false;
+	else if( pers1.m_fathersName != pers2.m_fathersName )
+		return false;
+	else if( pers1.m_customerNumber != pers2.m_customerNumber )
+		return false;
+	else if( pers1.m_TimeOfCityCalls.minute != pers2.m_TimeOfCityCalls.minute )
+		return false;
+	else if( pers1.m_TimeOfCityCalls.second != pers2.m_TimeOfCityCalls.second )
+		return false;
+	else if( pers1.m_TimeofOutCityCalls.minute != pers2.m_TimeofOutCityCalls.minute )
+		return false;
+	else if( pers1.m_TimeofOutCityCalls.second != pers2.m_TimeofOutCityCalls.second )
+		return false;
+	return true;
 }
