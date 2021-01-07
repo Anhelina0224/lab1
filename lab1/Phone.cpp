@@ -6,6 +6,40 @@ Phone::Phone (int id, std::string familyName, std::string name, std::string fath
 	: m_customerNumber (customerNumber), m_TimeOfCityCalls{ secondsOfCitiesCalls,minutesOfCitiesCalls }, m_TimeofOutCityCalls{secondsOfOutCitiesCalls, minutesOfOutCitiesCalls}, BaseClass (id, familyName, name, fatherName)
 { }
 
+void Phone::print ()
+{
+	std::cout << "Id: " << m_id << std::endl;
+	std::cout << m_familyName << " " << m_name << " " << m_fatherName << std::endl;
+	std::cout << "Customer number: " << m_customerNumber << std::endl;
+	std::cout << "Time of city calls: " << m_TimeOfCityCalls.minute << ":" << m_TimeOfCityCalls.second << std::endl;
+	std::cout << "Time of out city calls " << m_TimeofOutCityCalls.minute << ":" << m_TimeofOutCityCalls.second << std::endl;
+
+}
+
+void Phone::setObject ()
+{
+	
+	std::cout << "Enter ID";
+	std::cin >> m_id;
+	std::cout << "Family name:";
+	std::cin >> m_familyName;
+	std::cout << "Name: ";
+	std::cin >> m_name;
+	std::cout << "Father name: ";
+	std::cin >> m_fatherName;
+	std::cout << "Customer number: ";
+	std::cin >> m_customerNumber;
+	std::cout << "Enter time of cities calls minutes than seconds";
+	std::cin >> m_TimeOfCityCalls.minute;
+	std::cout << "Seconds: ";
+	std::cin >> m_TimeOfCityCalls.second;
+	std::cout << "Enter time of out cities calls minutes than seconds";
+	std::cin >> m_TimeofOutCityCalls.minute;
+	std::cout << "Seconds: ";
+	std::cin >> m_TimeofOutCityCalls.second;
+	
+}
+
 std::istream& operator>>(std::istream &in, Phone &phone)
 {
 	std::cout << "Enter ID";

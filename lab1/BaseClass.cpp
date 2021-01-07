@@ -9,3 +9,15 @@ BaseClass::BaseClass (int id, std::string familyName, std::string name, std::str
 	: m_id(id), m_familyName(familyName), m_name(name), m_fatherName(fatherName)
 {
 }
+
+void BaseClass::print ()
+{
+	std::cout << "Error";
+}
+
+void BaseClass::setObject ()
+{
+	std::cout << "Error ";
+}
+
+
