@@ -1,11 +1,9 @@
 #include "Phone.h"
 Phone::Phone ()
-	:m_id (0), m_familyName ("Unknown"), m_name ("Unknown"), m_fathersName ("Unknown"), m_customerNumber (0), m_TimeOfCityCalls{0,0}, m_TimeofOutCityCalls{0,0}
-{
-
-}
+	: m_customerNumber (0), m_TimeOfCityCalls{0,0}, m_TimeofOutCityCalls{0,0}, BaseClass (0, "Unknown", "Unknown", "Unknown")
+{}
 Phone::Phone (int id, std::string familyName, std::string name, std::string fatherName, long int customerNumber, short int minutesOfCitiesCalls, short int secondsOfCitiesCalls, short int minutesOfOutCitiesCalls, short int secondsOfOutCitiesCalls)
-	: m_id (id), m_familyName (familyName), m_name (name), m_fathersName (fatherName), m_customerNumber (customerNumber), m_TimeOfCityCalls{ secondsOfCitiesCalls,minutesOfCitiesCalls }, m_TimeofOutCityCalls{secondsOfOutCitiesCalls, minutesOfOutCitiesCalls}
+	: m_customerNumber (customerNumber), m_TimeOfCityCalls{ secondsOfCitiesCalls,minutesOfCitiesCalls }, m_TimeofOutCityCalls{secondsOfOutCitiesCalls, minutesOfOutCitiesCalls}, BaseClass (id, familyName, name, fatherName)
 { }
 
 std::istream& operator>>(std::istream &in, Phone &phone)
@@ -17,7 +15,7 @@ std::istream& operator>>(std::istream &in, Phone &phone)
 	std::cout << "Name: ";
 	in >> phone.m_name;
 	std::cout << "Father name: ";
-	in >> phone.m_fathersName;
+	in >> phone.m_fatherName;
 	std::cout << "Customer number: ";
 	in >> phone.m_customerNumber;
 	std::cout << "Enter time of cities calls minutes than seconds";
@@ -34,7 +32,7 @@ std::istream& operator>>(std::istream &in, Phone &phone)
 std::ostream &operator<<(std::ostream &out, Phone &phone)
 {
 	std::cout << "Id: " << phone.m_id << std::endl;
-	std::cout << phone.m_familyName << " " << phone.m_name << " " << phone.m_fathersName << std::endl;
+	std::cout << phone.m_familyName << " " << phone.m_name << " " << phone.m_fatherName << std::endl;
 	std::cout << "Customer number: " << phone.m_customerNumber << std::endl;
 	std::cout << "Time of city calls: " << phone.m_TimeOfCityCalls.minute << ":" << phone.m_TimeOfCityCalls.second << std::endl;
 	std::cout << "Time of out city calls " << phone.m_TimeofOutCityCalls.minute << ":" << phone.m_TimeofOutCityCalls.second << std::endl;
@@ -47,9 +45,9 @@ bool operator==(const Phone &pers1, const Phone &pers2)
 		return false;
 	else if( pers1.m_familyName != pers2.m_familyName )
 		return false;
-	else if( pers1.m_name != pers2.m_fathersName )
+	else if( pers1.m_name != pers2.m_fatherName )
 		return false;
-	else if( pers1.m_fathersName != pers2.m_fathersName )
+	else if( pers1.m_fatherName != pers2.m_fatherName )
 		return false;
 	else if( pers1.m_customerNumber != pers2.m_customerNumber )
 		return false;

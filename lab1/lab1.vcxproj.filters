@@ -24,12 +24,18 @@
     <ClCompile Include="PaymentForElectricyty.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BaseClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Phone.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PaymentForElectricyty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

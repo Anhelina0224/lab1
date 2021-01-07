@@ -1,8 +1,9 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include"BaseClass.h"
 
-class Phone
+class Phone : public BaseClass
 {
 private:
 	struct m_time
@@ -10,10 +11,10 @@ private:
 		short int second;
 		short int minute;
 	};
-	long int m_id;
+	/*long int m_id;
 	std::string m_familyName;
 	std::string m_name;
-	std::string m_fathersName;
+	std::string m_fathersName;*/
 	long int m_customerNumber;
 	m_time m_TimeOfCityCalls;
 	m_time m_TimeofOutCityCalls;

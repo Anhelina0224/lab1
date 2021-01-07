@@ -1,12 +1,17 @@
 #pragma once
 #include <string>
-class PaymentForElectricyty
+#include"BaseClass.h"
+class PaymentForElectricyty : public BaseClass
 {
 private:
-	long int m_id;
+	/*long int m_id;
 	std::string m_familyName;
 	std::string m_name;
+	std::string m_fatherName;*/
 	int m_EnerguUse;
 	int m_EnergyPayed;
+public:
+	PaymentForElectricyty ();
+	PaymentForElectricyty (long int id,std::string familyName,std::string name, std::string fatherName,int energyUsed, int energyPayed);
 };
 
