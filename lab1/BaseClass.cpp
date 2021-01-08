@@ -29,10 +29,14 @@ void BaseClass::setObject ()
 	std::cin >> m_fatherName;
 }
 
-void BaseClass::addTofile ()
+void BaseClass::addToFile ()
 {
 	m_typeOfclass = 3;
 	infile.open ("myFile.txt");
+	if( !infile ) {
+		
+		throw(Errors ("Can't open file! Placee: base class addTofile"));
+	}
 	infile >> m_typeOfclass;
 	infile >> m_id;
 	infile >> m_familyName;
@@ -45,6 +49,8 @@ void BaseClass::addTofile ()
 void BaseClass::getFromFile ()
 {
 	outFile.open ("myFile.txt");
+	if( !outFile )
+		throw(Errors("Can't open file! Placee: base class getFromFile"));
 	std::cout << "Id";
 	outFile << m_id;
 	std::cout << "Family name: ";

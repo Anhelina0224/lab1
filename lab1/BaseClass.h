@@ -2,6 +2,7 @@
 #include<string>
 #include<iostream>
 #include<fstream>
+#include "Errors.h"
 class BaseClass
 {
 protected:
@@ -17,7 +18,7 @@ public:
 	BaseClass (int id, std::string familyName, std::string name, std::string fatherName);
 	virtual void print ();
 	virtual void setObject ();
-	virtual void addTofile ();
+	virtual void addToFile ();
 	virtual void getFromFile ();
 
 };

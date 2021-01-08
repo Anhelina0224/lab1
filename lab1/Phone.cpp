@@ -44,6 +44,8 @@ void Phone::addToFile ()
 {
 	m_typeOfclass = 2;
 	infile.open ("myFile.txt");
+	if( !infile )
+		throw(Errors ("Can't open file! Placee: phone addtofile"));
 	infile >> m_typeOfclass;
 	infile >> m_id;
 	infile >> m_familyName;
@@ -60,6 +62,8 @@ void Phone::addToFile ()
 void Phone::getFromFile ()
 {
 	outFile.open ("myFile.txt");
+	if( !outFile )
+		throw(Errors ("Can't open file! Placee: Phone getFromFile"));
 	std::cout << "Id";
 	outFile << m_id;
 	std::cout << "Family name: ";

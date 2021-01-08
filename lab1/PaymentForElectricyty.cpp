@@ -39,6 +39,8 @@ void PaymentForElectricyty::addToFile ()
 {
 	m_typeOfclass = 1;
 	infile.open ("myFile.txt");
+	if( !infile )
+		throw(Errors ("Can't open file! Placee: paymentforElectricity addtoFile"));
 	infile >> m_typeOfclass;
 	infile >> m_id;
 	infile >> m_familyName;
@@ -47,4 +49,24 @@ void PaymentForElectricyty::addToFile ()
 	infile >> m_EnerguUse;
 	infile >> m_EnergyPayed;
 	infile.close ();
+}
+
+void PaymentForElectricyty::getFromFile ()
+{
+	outFile.open ("myFile.txt");
+	if( !outFile )
+		throw(Errors ("Can't open file! Placee: paymentforelectricity getFromFile"));
+	std::cout << "Id";
+	outFile << m_id;
+	std::cout << "Family name: ";
+	outFile << m_familyName;
+	std::cout << "Name ";
+	outFile << m_name;
+	std::cout << "\nFather name ";
+	outFile << m_fatherName;
+	std::cout << "\nUsedEnergy ";
+	outFile << m_EnerguUse;
+	std::cout << "\nPayedEnergy ";
+	outFile << m_EnergyPayed;
+	outFile.close ();
 }

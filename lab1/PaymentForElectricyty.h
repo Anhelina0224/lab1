@@ -13,6 +13,7 @@ public:
 	virtual void print ();
 	virtual void setObject ();
 	virtual void addToFile ();
+	virtual void getFromFile ();
 
 };
 
