@@ -12,5 +12,7 @@ public:
 	PaymentForElectricyty (long int id,std::string familyName,std::string name, std::string fatherName,int energyUsed, int energyPayed);
 	virtual void print ();
 	virtual void setObject ();
+	virtual void addToFile ();
+
 };
 

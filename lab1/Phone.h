@@ -11,10 +11,6 @@ private:
 		short int second;
 		short int minute;
 	};
-	/*long int m_id;
-	std::string m_familyName;
-	std::string m_name;
-	std::string m_fathersName;*/
 	long int m_customerNumber;
 	m_time m_TimeOfCityCalls;
 	m_time m_TimeofOutCityCalls;
@@ -25,6 +21,8 @@ public:
 	friend std::ostream& operator<<(std::ostream &out, Phone &phone);
 	virtual void print();
 	virtual void setObject ();
+	virtual void addToFile ();
+	virtual void getFromFile ();
 	friend bool operator==(const Phone& pers1, const Phone &pers2);
 	~Phone (){}
 };

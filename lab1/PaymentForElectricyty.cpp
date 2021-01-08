@@ -34,3 +34,17 @@ void PaymentForElectricyty::setObject ()
 	std::cout << "Payed power: ";
 	std::cin >> m_EnergyPayed;
 }
+
+void PaymentForElectricyty::addToFile ()
+{
+	m_typeOfclass = 1;
+	infile.open ("myFile.txt");
+	infile >> m_typeOfclass;
+	infile >> m_id;
+	infile >> m_familyName;
+	infile >> m_name;
+	infile >> m_fatherName;
+	infile >> m_EnerguUse;
+	infile >> m_EnergyPayed;
+	infile.close ();
+}

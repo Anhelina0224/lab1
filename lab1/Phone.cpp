@@ -40,6 +40,47 @@ void Phone::setObject ()
 	
 }
 
+void Phone::addToFile ()
+{
+	m_typeOfclass = 2;
+	infile.open ("myFile.txt");
+	infile >> m_typeOfclass;
+	infile >> m_id;
+	infile >> m_familyName;
+	infile >> m_name;
+	infile >> m_fatherName;
+	infile >> m_customerNumber;
+	infile >> m_TimeOfCityCalls.minute;
+	infile >> m_TimeOfCityCalls.second;
+	infile >> m_TimeofOutCityCalls.minute;
+	infile >> m_TimeofOutCityCalls.second;
+	infile.close ();
+}
+
+void Phone::getFromFile ()
+{
+	outFile.open ("myFile.txt");
+	std::cout << "Id";
+	outFile << m_id;
+	std::cout << "Family name: ";
+	outFile << m_familyName;
+	std::cout << "Name ";
+	outFile << m_name;
+	std::cout << "Father name ";
+	outFile << m_fatherName;
+	std::cout << "Customer";
+	outFile << m_customerNumber;
+	std::cout << "\nTime city: ";
+	outFile << m_TimeOfCityCalls.minute;
+	std::cout << ":";
+	outFile << m_TimeOfCityCalls.second;
+	std::cout << "\nTime out city: ";
+	outFile << m_TimeofOutCityCalls.minute;
+	std::cout << ":";
+	outFile << m_TimeofOutCityCalls.second;
+	outFile.close ();
+}
+
 std::istream& operator>>(std::istream &in, Phone &phone)
 {
 	std::cout << "Enter ID";
